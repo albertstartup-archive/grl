@@ -1,0 +1,31 @@
+<head>
+  <title>Gig Radio</title>
+</head>
+
+<body>
+  {{> app}}
+</body>
+
+<template name="app">
+  <div id="screenshot">
+    <div id="innerscreenshot">
+      <div id="top">
+	<div id="ilove">
+	  <p id="bigI">I</p>
+	  <img src="gigradioloveicon.png"/>
+	</div>
+      </div>
+      <div id="bottom">
+	<p id="city">
+	  {{city}}
+	  {{bt}}
+	  {{#if btf}}
+	  {{else}}
+	  {{> spinner}}
+	  {{/if}}
+	</p>
+      </div>
+    </div>
+  </div>
+  <input type="text" id="cityinput"/>
+</template>

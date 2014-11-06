@@ -1,0 +1,57 @@
+@font-face {
+    /* Type Wrong Font by Digital Graphic Loabs from dafont.com. */
+    /* Please review licence or replace font if needed */
+    font-family: typewrong;
+    src: url(typwrng.ttf);
+}
+
+body {
+    font-family: typewrong;
+}
+
+#screenshot {
+    width: 490px;
+    height: 490px;
+    transform-style: preserve-3d;;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#innerscreenshot {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#top {
+    text-align: center;
+}
+
+#ilove {
+    display: inline-block;
+}
+
+#bigI {
+    font-size: 13em;
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+#bottom {
+    text-align: center;
+    font-size: 5.3em;
+    max-height: 184px;
+    width: 100%;
+    overflow: hidden;
+}
+
+#bottom p {
+    margin: 0;
+    padding: 0;
+}
+
+#cityinput {
+    text-transform: uppercase;
+}
