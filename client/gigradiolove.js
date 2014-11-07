@@ -1,10 +1,3 @@
-function errorOrCity(error, result) {
-    if (error){
-	console.log(error);
-    }else{
-	Session.set('city', result[0].city);
-    }
-}
 function getGeoCity() {
     Session.set('reactiveLatLngObject', Geolocation.latLng());
     var reactiveLatLngObject = Session.get('reactiveLatLngObject');
@@ -14,19 +7,14 @@ function getGeoCity() {
 	Meteor.call('reverseGeo', lat, lng, errorOrCity);
     }
 }
-Tracker.autorun(getGeoCity);
-
-function fitText() {
-    var bottom = document.querySelector('#bottom');
-    bottom.style.fontSize="5.3em";
-    $('#bottom').bigtext();
-    var input = $('#cityinput').val().toUpperCase();
-    Session.set('city', input);
+function errorOrCity(error, result) {
+    if (error){
+	console.log(error);
+    }else{
+	Session.set('city', result[0].city);
+    }
 }
-
-Template.app.events({
-    'keyup #cityinput, blur #cityinput, focus #cityinput, keypress #cityinput': fitText
-});
+Tracker.autorun(getGeoCity);
 
 Template.app.helpers({
     city: function() {
