@@ -1,6 +1,6 @@
 Package.describe({
   name: 'as:bigtext',
-  summary: ' /* Fill me in! */ ',
+  summary: 'MIT Licence',
   version: '1.0.0',
   git: 'https://github.com/zachleat/BigText'
 });
