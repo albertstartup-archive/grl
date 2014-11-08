@@ -20,10 +20,23 @@ Template.app.helpers({
     city: function() {
 	return Session.get('city');
     },
-    bt: function() {
-	window.setTimeout(function(){$('#bottom').bigtext(); Session.set('btf', true);}, 2000);
+    bigText: function() {
+	window.setTimeout(function(){
+	    $('#bottom').bigtext();
+	    Session.set('bigTextFinished', true);
+	}, 0);
     },
-    btf: function() {
-	return Session.get('btf');
+    bigTextFinished: function() {
+	return Session.get('bigTextFinished');
+    },
+    imageDataURI: function() {
+	return Session.get('imageDataURI');
+    },
+    snapPic: function() {
+	html2canvas($('#innerscreenshot'),{
+	    onrendered: function(canvas) {
+		Session.set('imageDataURI',canvas.toDataURL('image/png'));
+	    }
+	})
     }
 });

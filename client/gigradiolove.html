@@ -1,5 +1,6 @@
 <head>
   <title>Gig Radio</title>
+  <script type="text/javascript" src="html2canvas.js"></script>
 </head>
 
 <body>
@@ -17,18 +18,21 @@
       </div>
       <div id="bottom">
 	<p id="city">
+	  {{#if city}}
 	  {{city}}
-	  {{bt}}
-	  {{#if btf}}
-	  {{else}}
-	  {{> spinner}}
+	  {{bigText}}
 	  {{/if}}
 
-	  {{unless btf}}
-	  
-	  
+	  {{#unless bigTextFinished}}
+	  {{> spinner}}
+	  {{else}}
+	  {{snapPic}}
+	  {{/unless}}
 	</p>
       </div>
     </div>
   </div>
+  {{#if city}}
+  <a download="ilovegigradio.png" href={{imageDataURI}} id='download'>Download Picture</a>
+  {{/if}}
 </template>

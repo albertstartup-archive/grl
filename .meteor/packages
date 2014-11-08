@@ -4,11 +4,7 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
-insecure
 as:bigtext
 mdg:geolocation
 aldeed:geocoder
 sacha:spin
-joshowens:shareit
-
